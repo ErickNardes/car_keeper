@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "554346133734",
+    "project_id": "car-keeper-ffc9d",
+    "storage_bucket": "car-keeper-ffc9d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554346133734:android:9bb71982dd050b84bae327",
+        "android_client_info": {
+          "package_name": "com.example.car_keeper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuBGCxw9MKBB2uRYPPZsXxpC5x_X4EebM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
