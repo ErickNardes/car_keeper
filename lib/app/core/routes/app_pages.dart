@@ -5,6 +5,8 @@ import 'package:car_keeper/app/features/auth/login/login_bindings.dart';
 import 'package:car_keeper/app/features/auth/login/presenter/page/login_page.dart';
 import 'package:car_keeper/app/features/home/home_bindings.dart';
 import 'package:car_keeper/app/features/home/presenter/page/home_page.dart';
+import 'package:car_keeper/app/features/veichles/presenter/page/vehicles_page.dart';
+import 'package:car_keeper/app/features/veichles/vehicles_bindings.dart';
 import 'package:get/get.dart';
 
 class AppPages {
@@ -25,6 +27,12 @@ class AppPages {
       name: AppRoutes.home,
       page: () => const HomePage(),
       binding: HomeBindings(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: AppRoutes.newVehiclesPage,
+      page: () => const VehiclesPage(),
+      binding: VehiclesBindings(),
       transition: Transition.cupertino,
     ),
   ];

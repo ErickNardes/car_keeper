@@ -34,8 +34,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 80,
+        backgroundColor: primaryColor,
         automaticallyImplyLeading: false,
-        title: Text('Hello, ${controller.authController.userAuthEntity!.name}'),
+        title: Text(
+          'Hello, ${controller.authController.userAuthEntity!.name}',
+          style: const TextStyle(color: white),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
