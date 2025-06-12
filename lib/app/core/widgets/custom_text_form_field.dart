@@ -12,6 +12,7 @@ class CustomTextFormFieldWidget extends StatefulWidget {
   final Widget? prefixIcon;
   final Widget? sufixIcon;
   final String? Function(String?)? validator;
+  final Function(String)? onChanged;
 
   const CustomTextFormFieldWidget({
     super.key,
@@ -24,6 +25,7 @@ class CustomTextFormFieldWidget extends StatefulWidget {
     this.prefixIcon,
     this.sufixIcon,
     this.validator,
+    this.onChanged,
   });
 
   @override
@@ -40,6 +42,7 @@ class _CustomTextFormFieldWidgetState extends State<CustomTextFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: widget.onChanged,
       validator: widget.validator,
       focusNode: FocusNode(),
       cursorColor: Colors.black,

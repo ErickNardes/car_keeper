@@ -3,6 +3,7 @@
 import 'package:car_keeper/app/core/routes/app_routes.dart';
 import 'package:car_keeper/app/core/theme/theme_colors.dart';
 import 'package:car_keeper/app/features/home/presenter/controller/home_controller.dart';
+import 'package:car_keeper/app/features/home/presenter/page/home_page_content.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,6 +35,14 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              controller.getListVehicles();
+            },
+            icon: const Icon(Icons.refresh_outlined),
+          ),
+        ],
         toolbarHeight: 80,
         backgroundColor: primaryColor,
         automaticallyImplyLeading: false,
@@ -46,7 +55,9 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: primaryColor,
         onPressed: () {
-          Get.toNamed(AppRoutes.newVehiclesPage);
+          Get.toNamed(AppRoutes.newVehiclesPage)?.then((value) {
+            controller.getListVehicles();
+          });
         },
         child: const Icon(
           Icons.add_outlined,
@@ -56,7 +67,7 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         controller: _pageController,
         children: [
-          Container(),
+          HomePageContent(controller: controller),
           Container(),
           Container(),
           Container(),
